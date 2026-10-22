@@ -1,0 +1,48 @@
+:root{--night:#06172b;--deep:#082541;--blue:#123b59;--foam:#d9f3f4;--soft:#b9d4e2;--gold:#f5e5bd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:#f1f6fb;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 20%,#173c5a 0%,#0b2741 35%,#06172b 75%)}
+.sky-glow{position:absolute;top:4rem;left:50%;width:min(90vw,760px);height:500px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(166,211,226,.11),transparent 68%);pointer-events:none}
+.scene{position:relative;min-height:100vh;isolation:isolate}
+.topline{position:absolute;top:24px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:12px;color:#a9c9d8;font:10px/1.4 Arial,sans-serif;letter-spacing:.24em;z-index:5}
+.tiny-moon{font-size:19px;color:var(--gold)}.top-dot{color:var(--gold)}
+.stars{position:absolute;inset:0 0 auto;height:850px;overflow:hidden;pointer-events:none;z-index:-1}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#f5f4e8;opacity:.2;animation:twinkle 3.5s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.18;transform:scale(.7)}to{opacity:.9;transform:scale(1.5)}}
+.hero{position:relative;z-index:2;text-align:center;padding:110px 22px 0;min-height:650px}
+.moon-halo{width:220px;height:220px;margin:0 auto 18px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,rgba(244,239,210,.12),rgba(167,211,225,.06) 42%,transparent 72%);animation:halo 7s ease-in-out infinite alternate}
+.moon{width:112px;height:112px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffdf0 0,#f6f0d6 43%,#d4dfdc 72%,#a5bdc8 100%);box-shadow:0 0 28px #d9eff055,0 0 85px #c2e8ff3b;position:relative;overflow:hidden}
+.moon:before,.moon:after{content:"";position:absolute;background:#b7c8c6;border-radius:50%;opacity:.22}
+.moon:before{width:23px;height:17px;top:26px;left:25px;box-shadow:35px 39px 0 -4px #a4b7ba,8px 61px 0 -7px #8ca9b3}
+.moon:after{width:12px;height:12px;top:63px;left:70px;box-shadow:-36px -27px 0 2px #b0c5c8}
+@keyframes halo{to{transform:scale(1.05);filter:brightness(1.15)}}
+.eyebrow{font:10px/1.5 Arial,sans-serif;letter-spacing:.25em;color:#b4d0dc;margin:0 0 16px}
+h1{font-size:clamp(42px,9vw,76px);font-weight:400;line-height:1.05;letter-spacing:-.045em;margin:0;color:#f8f6eb}
+h1 em{font-weight:400;color:var(--gold);font-style:italic}
+.intro{max-width:440px;margin:22px auto 25px;color:#c4d9e2;font-size:17px;line-height:1.8}
+.discover{display:inline-flex;gap:12px;align-items:center;color:#f4e8c8;text-decoration:none;font:11px Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #d9d3b766;padding:0 0 10px;transition:gap .3s}
+.discover:hover{gap:19px}.discover span{font-size:16px}
+.ocean{position:absolute;top:445px;left:0;right:0;height:360px;overflow:hidden;z-index:0;background:linear-gradient(180deg,transparent 0%,#0b2d48 28%,#061b30 100%)}
+.distant-shore{position:absolute;top:28px;left:-5%;width:110%;height:100px;background:linear-gradient(180deg,transparent,#0b2b43);clip-path:polygon(0 30%,12% 20%,24% 40%,38% 13%,50% 30%,62% 8%,75% 35%,88% 15%,100% 28%,100% 100%,0 100%)}
+.water-glow{position:absolute;top:0;left:40%;width:20%;height:100%;background:linear-gradient(180deg,#dcefdc28,#8bd4e633 45%,transparent);filter:blur(20px)}
+.wave{position:absolute;width:150%;left:-25%;height:180px;border-radius:45%;border-top:1px solid #c5e5ec35;transform:rotate(-3deg);animation:drift 12s ease-in-out infinite alternate}
+.wave-one{top:74px;background:linear-gradient(180deg,#17476644,transparent)}.wave-two{top:120px;left:-15%;border-color:#c3e7ed2c;animation-duration:16s}.wave-three{top:165px;border-color:#b3dbe52c;animation-duration:10s}
+.reflection{position:absolute;top:0;left:48%;height:260px;width:4px;background:linear-gradient(#fff5cf88,#d5f5ff12,transparent);filter:blur(6px);box-shadow:0 0 20px #d9f5ff4f}
+@keyframes drift{from{transform:translateX(-2%) rotate(-3deg)}to{transform:translateX(2%) rotate(-1deg)}}
+.letter-wrap{position:relative;z-index:2;padding:25px 18px 70px}
+.letter-card{max-width:650px;margin:0 auto;padding:clamp(26px,6vw,54px);background:linear-gradient(145deg,rgba(12,39,60,.94),rgba(7,27,45,.96));border:1px solid #c7e6e526;border-radius:3px;box-shadow:0 24px 80px #0003}
+.card-mark{font:9px Arial,sans-serif;letter-spacing:.2em;color:#b6d3dd;text-align:center;margin-bottom:30px}
+.letter-card h2{font-size:clamp(30px,6vw,42px);font-weight:400;color:var(--gold);margin:0 0 25px}
+.letter-card p{font-size:17px;line-height:1.95;color:#d5e3e8;margin:0 0 19px}
+.letter-card .closing{color:#f4e8ca;font-style:italic;margin-top:25px}
+.signature{border-top:1px solid #d5edf01c;padding-top:22px;margin-top:28px;color:#a9c5d1;font-size:14px}.signature span{color:var(--gold);font-style:italic}
+.reminder-section{position:relative;text-align:center;padding:50px 22px 85px;max-width:650px;margin:auto}
+.reminder-section h2{font-size:clamp(28px,6vw,40px);font-weight:400;line-height:1.25;margin:0 auto 22px;color:#f5f1e4}
+.reminder{min-height:68px;max-width:490px;margin:0 auto 24px;color:#c1d7e0;line-height:1.8;font-size:17px}
+button{font:11px Arial,sans-serif;letter-spacing:.05em;color:#f5ebd2;background:#ffffff08;border:1px solid #d9eaf044;border-radius:40px;padding:15px 21px;cursor:pointer;transition:background .25s,transform .25s}
+button:hover{background:#ffffff12;transform:translateY(-2px)}button span{color:var(--gold);margin-left:7px}
+footer{text-align:center;padding:22px 15px 30px;color:#7897a8;font:10px Arial,sans-serif;letter-spacing:.06em}footer span{color:#e6d4a9}
+@media(min-width:760px){.hero{min-height:700px;padding-top:115px}.ocean{top:480px;height:410px}.letter-wrap{padding-top:20px}.letter-card p{font-size:18px}}
+@media(max-width:380px){.topline{font-size:9px;letter-spacing:.17em}.hero{padding-top:100px}.moon-halo{width:185px;height:185px}.moon{width:98px;height:98px}.intro{font-size:16px}.letter-card p{font-size:16px}.card-mark{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
